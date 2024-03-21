@@ -10,13 +10,13 @@ const Navbar = (props) => {
 
     
   return (
-    <div className='flex justify-evenly'>
+    <div className='flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto'>
 
         <Link to="/"> <img src={logo} alt='Logo' width={160} height={32} loading='lazy'/> 
         </Link>
 
         <nav>
-            <ul className='flex gap-3'>
+            <ul className='flex gap-x-6 text-white'>
                 <li>
                     <Link to='/'>Home</Link>
                 </li>
@@ -31,12 +31,12 @@ const Navbar = (props) => {
 
         {/* login -- logout -- signin --dashboard */}
 
-        <div className='flex gap-3 ml-3'> 
+        <div className='flex item-center gap-x-4 text-white '> 
 
         { !isLogedIn &&
             <Link to='/login'>
-            <button onClick={()=>{setLogedIn(true)
-            }}>
+            <button  className='bg-[#12283A] py-[8px] px-[12px] 
+            rounded-[8px] border-[#0D0415] text-gray-400'>
                 Login
             </button>
          </Link>
@@ -44,7 +44,8 @@ const Navbar = (props) => {
 
            {!isLogedIn &&
             <Link to='/signup'>
-                <button onClick={()=>{setLogedIn(true)}}>
+                <button className='bg-[#12283A] py-[8px] px-[12px]
+                rounded-[8px] border-[#0D0415] text-gray-400'>
                     signup
                 </button>
             </Link>
